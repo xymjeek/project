@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"  href="/static/css/component.css" />
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .all{
+            width: 100%;
+            height: 100%;
+            background-image:url("../static/img/bg.jpg");
+        }
+    </style>
+    <script>
+    function ginUser() {
+             window.location.href="/ginUsers/"
+        }
+        function jsonUs() {
+             window.location.href="/jsonUsers/"
+        }
+         function jsonUser() {
+             window.location.href="/jsonUser/"
+        }
+
+
+
+    </script>
+</head>
+<body>
+<h1 align="center">欢迎来到爬虫世界！！！！</h1>
+<div class="all">
+<div class="top">
+<center>
+    <form action="/Tie/">
+    <input type="text" name="key"  class="act-but1 submit" placeholder="请输入关键字">
+    <button  type="submit" class="act-but submit" style="color: #ffffff" >输入关键字爬取贴吧</button>
+        </form>
+    <button onclick="jsonUs()" type="submit" class="act-but submit" style="color: #ffffff" >爬取豆瓣电影json数据</button>
+    <button onclick="jsonUser()" type="submit" class="act-but submit" style="color: #ffffff" >显示电影json数据</button>
+    <button onclick="ginUser()" type="submit" class="act-but submit" style="color: #ffffff" >返回登录</button>
+      </center>
+    <table border="1" class="table table-striped" >
+
+          {% for x in Tie %}
+            <tr>
+                <td align="center">{{ x.ye }}</td>
+                <td align="center"><a href="{{ x.url }}" target="_blank">{{ x.url }}</a></td>
+
+            </tr>
+          {% endfor %}
+
+</table>
+</div>
+
+
+</div>
+
+</body>
+</html>

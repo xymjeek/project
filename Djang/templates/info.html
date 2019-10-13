@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    恭喜
+{% for x in data %}
+    {{ x.user }}
+{% endfor %}
+    你的密码是：
+{% for x in data %}
+    {{ x.password }}
+{% endfor %}
+
+</body>
+</html>

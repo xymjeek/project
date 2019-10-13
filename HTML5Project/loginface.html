@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!--避免中文乱码-->
+		<meta charset="utf-8">
+		<title>IT论坛-登录</title>
+		<style>
+			*{margin:0px; padding:0px;}
+			.div_form{
+				width:600px;
+				height:auto;
+				margin:10px auto;
+			}
+			.div_form_title{
+				width:100%;
+				height:40px;
+				line-height:40px;
+				text-align:center;
+				color:white;
+				background-color:orange;
+				font-size:24px;
+				font-weight:bold;
+			}
+			.div_form_row{
+				width:100%;
+				height:40px;
+				line-height:40px;
+				text-align:center;
+				border-bottom:1px solid #eeeeee;
+			}
+			.div_form_label{
+				width:80px;
+				height:40px;
+				line-height:40px;
+				font-size:14px;
+				color:#999999;
+				text-align:right;
+				float:left;
+			}
+			.div_form_data{
+				width:500px;
+				height:40px;
+				line-height:40px;
+				float:right;
+				text-align:left;
+			}
+			.input_text{
+				width:250px;
+				height:30px;
+				line-height:30px;
+				font-size:14px;
+				color:#999999;
+				text-indent:14px;
+				border:1px solid orange;
+				border-radius:10px;
+			}
+			.msg{
+				font-size:12px;
+				color:#666666;
+			}
+			.center{text-align:center;}
+			.btn{
+				width:100px;
+				height:30px;
+				line-height:30px;
+				text-align:center;
+				font-size:18px;
+				font-weight:bold;
+				color:white;
+				border-radius:10px;
+				margin:0px 20px;
+			}
+			.submit{
+				background-color:orange;
+				border:1px solid orange;
+			}
+			.reset{
+				background-color:yellow;
+				border:1px solid yellow;
+			}
+			a{
+				font-size:18px;
+				font-weight:bold;
+				color:#999999;
+				text-decoration:none;
+			}
+			a:link{color:#999999}
+			a:visited{color:#999999}
+			a:hover{color:orange}
+			a:active{color:yellow}
+		</style>
+	</head>
+	
+	<body>
+		<div class="div_form">
+			<form method="post" action="javascript:void(0)">
+				<div class="div_form_title">IT论坛-登录</div>
+				<div class="div_form_row">
+					<div class="div_form_label">账号：</div>
+					<div class="div_form_data">
+						<input class="input_text" name="username"/>
+						<font class="msg" id="msg_account">
+							账号为一个合法的邮箱
+						</font>
+					</div>
+				</div>
+				<div class="div_form_row">
+					<div class="div_form_label">密码：</div>
+					<div class="div_form_data">
+						<input type="password" class="input_text" name="password"/>
+						<font class="msg" id="msg_password">
+							密码为6-20位的字母、数字、下滑线
+						</font>
+					</div>
+				</div>
+				<div class="div_form_row">
+					<div class="div_form_label">登录身份：</div>
+					<div class="div_form_data">
+						<select name="grade" class="input_text">
+							<option name="0">普通用户</option>
+							<option name="1">管理员</option>
+						</select>
+					</div>
+				</div>
+				<div class="div_form_row center">
+					<input type="submit" value="登录" class="btn submit"/>
+					<input type="reset" value="取消" class="btn reset"/>
+					<a href="register.html">注册</a>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

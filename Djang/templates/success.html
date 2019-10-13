@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成功页面</title>
+    <link rel="stylesheet"  href="/static/css/component.css" />
+    <script>
+
+        function jumpUser() {
+             window.location.href="/jumpUI/"
+        }
+        function addUser() {
+            window.location.href="/addUI/"
+        }
+        function delUser(id) {
+            window.location.href="/delUser/?id="+id+""
+        }
+        function updateUser(id) {
+            window.location.href="/updateUser/?id="+id+""
+        }
+    </script>
+    <style>
+        .all{
+            width: 100%;
+            height: 600px;
+            background-image:url("../static/img/bg1.jpg");
+        }
+    </style>
+</head>
+<body>
+<div class="all">
+  <!-- 显示所有账户在表格，进行各种操作-->
+  <center>
+  <font color="#00008b">
+            <h1>{{ dqyh }}</h1>
+    </font>
+        <button onclick="addUser()" class="act-b" style="color: #0096e6">增加用户</button><br>
+        <button onclick="jumpUser()" >爬虫</button><br>
+          <form action="/queryUserByUsername/" method="get">
+              <input type="text" name="username" placeholder="请输入姓名或者姓">
+              <input type="submit" value="查询">
+
+          </form>
+      <table border="1px" style="width: 400px;height: 100px;border-collapse: collapse;text-align: center" >
+          <th>username</th>
+          <th>password</th>
+          <th>操作</th>
+          <th>操作</th>
+
+          {% for x in data %}
+             <tr>
+                <td>{{ x.username }}</td>
+                <td>{{ x.password }}</td>
+                <td><button onclick="updateUser({{ x.id }})" >修改</button></td>
+                <td><button onclick="delUser({{ x.id }})" >删除</button></td>
+             </tr>
+          {% endfor %}
+      </table>
+  </center>
+</div>
+<h3 align="center">版权由@技术支持</h3>
+</body>
+</html>

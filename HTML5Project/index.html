@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+	 content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <script type="text/javascript">
+    	
+   		document.addEventListener('plusready', function(){
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   		});
+   		
+    </script>
+	<style type="text/css">
+		*{
+			margin: 0px;padding: 0px;
+		}
+		.indexpage{width:100%;}
+		
+		.search-indexpage{
+			width:100%;height:34px;
+			margin-bottom: 10px;
+		}
+		
+		.bottom-indexpage{
+			height:50px;width:100%;
+			border-top:1px solid red;
+			background-color: #dcdcdc;
+			font-weight: 600;/*字体加粗*/
+			margin:0 auto;position: fixed;bottom:0px;
+		}
+		.nav{
+			width:100%;height:50px;
+		}
+		.nav li{
+			height:50px;width:25%;line-height: 50px;
+			text-align: center;float:left;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="indexpage">
+		<div class="search-indexpage">
+			<table style="width:100%;">
+				<tr>
+					<td>
+						<div style="margin:5px 10px;
+						background-color: #dcdcdc;border-radius: 20px;
+						height:34px;text-align: center;">
+							搜索
+						</div>
+					</td>
+					<td style="width:36px;">
+						<img src="img/gerenzhongxin.png"
+						 onclick="LoadUrl('myself.html');" /></td>
+				</tr>
+			</table>
+		</div>
+		<div class="content-indexpage"  id="content-indexpage">
+			<!-- <iframe id="content-indexpage" src="main1.html">	
+			</iframe> -->
+		</div>
+		<div class="bottom-indexpage">
+			<ul class="nav">
+				<li url="main1.html">首页</li>
+				<li url="main2.html">联系人</li>
+				<li url="main3.html">找资料</li>
+				<li url="main4.html">个人</li>
+			</ul>
+		</div>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(window).ready(function(){
+			var s=4;
+			$(".nav li").css({"width":(100/s)+"%"});
+			$("#content-indexpage").load("main1.html");
+			
+		});
+		$(".nav li").click(function(){
+			var u = $(this).attr("url");//获取被选中项的url属性值
+			//alert(u);
+			//$("#content-indexpage").load(u);
+			LoadUrl(u);
+		});
+		
+		function LoadUrl(url){
+			$("#content-indexpage").load(url);
+			//$("#content-indexpage").attr("src",url);
+		};
+		
+	</script>
+</body>
+</html>

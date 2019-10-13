@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MydbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“Mydb.dbo.usertable”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="usertable">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="MydbModelStoreContainer">
+    <EntitySet Name="usertable" EntityType="Self.usertable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[usertable].[UserName] AS [UserName], 
+[usertable].[PassWord] AS [PassWord]
+FROM [dbo].[usertable] AS [usertable]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
